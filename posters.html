@@ -1,0 +1,70 @@
+<!--
+  posters.html - 海报页面
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETFLIX - 海报鉴赏</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- 页面专属样式 -->
+    <link rel="stylesheet" href="css/posters.css">
+    <link rel="stylesheet" href="css/modal.css">
+	<link rel="shortcut icon" href="res/img/favicon.ico">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="netflix-logo">NETFLIX</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="posters.html" class="active">海报墙</a></li>
+                <li><a href="player.html">放映厅</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="搜索电影或海报...">
+                <div class="search-suggestions"></div>
+            </div>
+            <!-- 修改为带登录链接的头像 -->
+            <a href="login.html" class="user-avatar" id="userAvatar">登陆</a>
+        </div>
+    </nav>
+
+    <!-- 修改：添加page容器 -->
+    <div class="page" id="posters">
+        <!-- 海报画廊 -->
+        <section class="posters-section">
+            <h1 class="gallery-title">电影海报艺术</h1>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="action">动作</button>
+                <button class="filter-btn" data-filter="drama">剧情</button>
+                <button class="filter-btn" data-filter="sci-fi">科幻</button>
+                <button class="filter-btn" data-filter="comedy">喜剧</button>
+            </div>
+            <div class="poster-grid" id="posterGrid"></div>
+        </section>
+
+        <!-- 海报模态框 -->
+        <div class="modal" id="posterModal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <img id="modalImage" src="" alt="放大海报">
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="js/data.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/posters.js"></script>
+    </div>
+</body>
+</html>

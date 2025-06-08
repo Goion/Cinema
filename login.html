@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETFLIX - 登录</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="res/img/favicon.ico">
+    <!-- 新增login.js引用 -->
+    <script src="js/login.js"></script>
+</head>
+<body>
+    <!-- 新增导航栏 -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="netflix-logo">NETFLIX</a>
+        </div>
+    </nav>
+
+    <!-- 新增page容器保持样式统一 -->
+    <div class="page">
+        <div class="login-container">
+            <!-- 登录表单 -->
+            <div class="auth-form active">
+                <h2>会员登录</h2>
+                <form id="loginForm">
+                    <input type="email" placeholder="邮箱" required>
+                    <input type="password" placeholder="密码" required>
+                    <button type="submit" class="hero-btn login-btn">立即登录</button>
+                </form>
+            </div>
+
+            <!-- 注册表单（重载版本） -->
+            <div class="auth-form">
+                <h2>加入会员</h2>
+                <form id="signupForm">
+                    <input type="email" placeholder="邮箱" required>
+                    <input type="password" placeholder="设置密码" required>
+                    <input type="password" placeholder="确认密码" required>
+                    <button type="submit" class="hero-btn signup-btn">立即注册</button>
+                </form>
+            </div>
+
+            <div class="signup-link">
+                <!-- 新增正确的事件绑定方式 -->
+                <a href="javascript:void(0)" class="underline-hover">立即注册</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

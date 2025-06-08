@@ -1,0 +1,72 @@
+/* css/player.css - 播放页面样式 */
+#player {
+    padding: 120px 4% 50px; /* 顶部间距从100px增加到120px */
+}
+
+.player-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.player-title {
+    margin-top: 30px;  /* 新增：增加标题上边距 */
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--netflix-white);
+}
+
+.video-container {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--netflix-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.control-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.volume-slider {
+    width: 100px;
+}
+
+.playback-rate {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.playback-select {
+    background-color: var(--netflix-dark);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+}

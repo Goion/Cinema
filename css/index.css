@@ -1,0 +1,236 @@
+/* css/index.css - 首页样式 */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    margin-bottom: 2rem;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    transform: translateY(-50%) scale(1.1);
+    object-fit: cover;
+    z-index: -2;/* 降低层级到渐变层下方 */
+    /* filter: blur(10px); */
+    opacity: 0.8;
+}
+
+/* 确保内容层级正确 */
+.hero-content {
+    max-width: 650px;
+    z-index: 1; /* 提升内容层级 */
+}
+
+.hero-title {
+    font-size: 4rem; /* 增大标题字号 */
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6); /* 增加文字阴影 */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem; /* 增加按钮间距 */
+    margin-top: 2rem;
+}
+
+.hero-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--netflix-light-gray);
+}
+
+.hero-rating {
+    color: #46d369; 
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.hero-year {
+    margin-right: 15px;
+}
+
+.hero-duration {
+    padding: 2px 4px;
+    background-color: rgba(109, 109, 110, 0.7);
+    border-radius: 2px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.carousel-section {
+    padding: 0 4%;
+    margin-bottom: 3rem;
+    position: relative; /* 新增：确保内容在滚动时正常显示 */
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    height: 500px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.carousel-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    max-width: 600px;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+}
+
+.carousel-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: var(--netflix-red);
+    transform: scale(1.2);
+}
+
+.movie-grid-section {
+    padding: 0 4%;
+    margin-bottom: 3rem;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.movie-card {
+    background-color: var(--netflix-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 更流畅的动画曲线 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 1.5rem;
+}
+
+.movie-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.movie-info .rating {
+    color: #ffc107;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.movie-info p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+    height: 60px;
+    overflow: hidden;
+}

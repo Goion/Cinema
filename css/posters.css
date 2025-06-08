@@ -1,0 +1,135 @@
+/* 新增海报网格布局 */
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 35px;
+    padding: 30px 5%;
+}
+
+/* 海报网格水平滚动优化 */
+.poster-grid {
+    overflow-x: auto;
+    scrollbar-color: var(--netflix-red) var(--netflix-dark);
+    scrollbar-width: thin;
+}
+
+/* 现代浏览器滚动条样式 */
+@supports (scrollbar-width: thin) {
+    .poster-grid {
+        scrollbar-color: var(--netflix-red) var(--netflix-dark);
+    }
+}
+
+/* 隐藏默认滚动条 */
+.poster-grid::-webkit-scrollbar {
+    height: 8px;
+    background-color: var(--netflix-dark);
+}
+
+.poster-grid::-webkit-scrollbar-thumb {
+    background-color: var(--netflix-red);
+    border-radius: 4px;
+}
+
+.poster-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    aspect-ratio: 1/1.618; /* 新增黄金比例容器 */
+}
+
+.poster-item img {
+    width: 100%;
+    height: 100%;
+    /* 修改: 将contain改为cover确保图片填满容器 */
+    object-fit: cover;
+    vertical-align: bottom;
+    border-radius: inherit;
+    /* 新增: 移除可能影响圆角显示的变换属性 */
+    transform: translateZ(0);
+}
+
+/* 修复悬停覆盖层样式 */
+.poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 60%, rgba(0,0,0,0.8));
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.poster-item:hover .poster-overlay {
+    opacity: 1;
+}
+
+.poster-item:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.gallery-title {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-btn {
+    background-color: var(--netflix-gray);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* 增加按钮点击反馈 */
+}
+
+.filter-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(229, 9, 20, 0.3);
+}
+
+/* 修改：为激活状态按钮显式定义文字颜色 */
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--netflix-red);
+    color: white; /* 新增颜色定义确保文字可见 */
+}
+
+/* 新增模态框动画效果 */
+.modal {
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    visibility: hidden;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    transform: scale(0.7);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}

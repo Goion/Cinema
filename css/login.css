@@ -1,0 +1,83 @@
+/* 新增登录页专用样式 */
+.login-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 8px;
+}
+
+.login-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.underline-hover {
+    position: relative;
+    color: var(--netflix-white);
+    text-decoration: none;
+}
+
+.underline-hover::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--netflix-red);
+    transition: width 0.3s ease;
+}
+
+/* 保持原有悬停效果 */
+.underline-hover:hover::after {
+    width: 100%;
+}
+
+/* 新增注册链接容器样式 */
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* 统一表单容器样式 */
+.auth-form {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+/* 新增淡入动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 新增表单切换动画 */
+.signup-form {
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 增强错误状态提示 */
+input:invalid {
+    border-color: #ff5252 !important;
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}

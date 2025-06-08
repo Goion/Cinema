@@ -1,0 +1,172 @@
+/* css/navbar.css - 导航栏样式 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* 确保容器使用两端对齐 */
+    align-items: center;
+    padding: 20px 4%;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+    transition: all 0.4s ease;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* 新增：允许左侧区域扩展填充剩余空间 */
+}
+
+.netflix-logo {
+    color: var(--netflix-red);
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-decoration: none;
+    font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-left: 30px; /* 修正：保持合适间距 */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: var(--netflix-white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transform: scale(1);
+}
+
+.nav-links a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(229, 9, 20, 0.4);
+}
+
+.nav-links a.active {
+    background-color: var(--netflix-red);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 20px; /* 新增：元素间距 */
+}
+
+.search-container {
+    position: relative;
+    border-radius: 4px;
+    display: flex; /* 修改为弹性布局 */
+    align-items: center;
+}
+
+.search-input {
+    width: 0;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    position: static; /* 修改定位方式 */
+    transform: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    order: 1; /* 输入框在图标右侧 */
+}
+
+.search-input.active {
+    border-radius: 4px;
+    width: 250px;
+    opacity: 1;
+    margin-left: -30px; /* 补偿图标位置 */
+    padding-left: 40px; /* 留出图标空间 */
+}
+
+.search-icon {
+    color: var(--netflix-white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1; /* 确保图标在输入框上层 */
+    order: 0; /* 图标在输入框左侧 */
+}
+
+/* 新增搜索建议样式 */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background: rgba(0,0,0,0.9);
+    border-radius: 4px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.search-suggestion-item {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user-avatar {
+    /* 新增文字样式 */
+    min-width: 40px;
+    text-align: center;
+    /* font-weight: bold; */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 8px 15px; /* 新增与其他按钮一致的padding */
+    border-radius: 4px;
+    background: linear-gradient(45deg, #e50914, #b1060f);
+    /* 修改为行内弹性容器 */
+    display: inline-flex;
+    /* 保留原有对齐属性 */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    /* 统一字体大小 */
+    font-size: 0.95rem;
+    /* 保留过渡效果 */
+    transition: all 0.3s ease;
+}
+
+/* 新增登录状态样式 */
+.user-avatar:hover {
+    background: linear-gradient(45deg, #b1060f, #e50914);
+    transform: scale(1.1);
+}
+
+/* 新增点击状态 */
+/* .user-avatar {
+    transform: scale(1);
+    position: relative;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    font-size: 0.9rem;
+}
+
+.user-avatar:active {
+    transform: scale(0.95);
+} */

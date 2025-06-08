@@ -1,0 +1,89 @@
+/* css/comments.css - 评论样式 */
+.comments-section {
+    background-color: var(--netflix-gray);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.comments-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--netflix-white);
+}
+
+.comment-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--netflix-dark);
+    border: 1px solid #2d4263;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.comment-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* 优化评论列表滚动条 */
+.comment-list::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(20, 20, 20, 0.5);
+}
+
+.comment-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #666, #444); /* 改为灰色渐变 */
+    border-radius: 3px;
+}
+
+.comment {
+    background-color: var(--netflix-dark);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--netflix-red);
+}
+
+.comment-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.comment-content {
+    line-height: 1.5;
+}
